@@ -1,0 +1,41 @@
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://dckgkctkr05ar"]
+
+[ext_resource type="FontFile" uid="uid://ce3qa0ky6w3fo" path="res://Assets/Fonts/Norsebold.otf" id="1_2q56d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2iuj0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wk0ow"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_81x5q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m2clf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xvm61"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kv5ty"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u3o3k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m8yoo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cirm0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_omvon"]
+
+[resource]
+default_font = ExtResource("1_2q56d")
+default_font_size = 32
+Button/colors/font_focus_color = Color(0.25098, 0.384314, 0.592157, 1)
+Button/colors/font_hover_color = Color(0.721569, 0.831373, 1, 1)
+Button/colors/font_pressed_color = Color(0.207843, 0.266667, 0.380392, 1)
+Button/styles/disabled = SubResource("StyleBoxEmpty_2iuj0")
+Button/styles/disabled_mirrored = SubResource("StyleBoxEmpty_wk0ow")
+Button/styles/focus = SubResource("StyleBoxEmpty_81x5q")
+Button/styles/hover = SubResource("StyleBoxEmpty_m2clf")
+Button/styles/hover_mirrored = SubResource("StyleBoxEmpty_xvm61")
+Button/styles/hover_pressed = SubResource("StyleBoxEmpty_kv5ty")
+Button/styles/hover_pressed_mirrored = null
+Button/styles/normal = SubResource("StyleBoxEmpty_u3o3k")
+Button/styles/normal_mirrored = SubResource("StyleBoxEmpty_m8yoo")
+Button/styles/pressed = SubResource("StyleBoxEmpty_cirm0")
+Button/styles/pressed_mirrored = SubResource("StyleBoxEmpty_omvon")

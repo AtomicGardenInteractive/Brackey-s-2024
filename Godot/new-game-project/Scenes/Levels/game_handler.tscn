@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dd3ciccoerrst"]
+[gd_scene load_steps=12 format=3 uid="uid://dd3ciccoerrst"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/Player.gd" id="1_3v35u"]
 [ext_resource type="PackedScene" uid="uid://7bmuha166gyx" path="res://main_menu.tscn" id="1_jth67"]
 [ext_resource type="Script" path="res://Scenes/Levels/game_handler.gd" id="1_vwlyo"]
 [ext_resource type="PackedScene" uid="uid://dkkxkrxcr74mb" path="res://Scenes/boat.tscn" id="2_74m0k"]
+[ext_resource type="Script" path="res://Scenes/Levels/menu_ui.gd" id="4_v23wc"]
 [ext_resource type="PackedScene" uid="uid://b82pkvikw18no" path="res://pause_menu.tscn" id="5_e3dhx"]
 
 [sub_resource type="Environment" id="Environment_5imuj"]
@@ -29,7 +30,7 @@ data = PackedVector3Array(64, 0, 64, 60.1212, 0, 64, 64, 0, 60.1212, 60.1212, 0,
 [node name="Game_Handler" type="Node" node_paths=PackedStringArray("pause_menu")]
 process_mode = 3
 script = ExtResource("1_vwlyo")
-pause_menu = NodePath("UI_Layers/Pause_UI/PauseMenu")
+pause_menu = NodePath("UI_Layers/Menu_UI/PauseMenu")
 
 [node name="Level_Handler" type="Node" parent="."]
 process_mode = 1
@@ -124,19 +125,10 @@ transform = Transform3D(7.005, 0, 0, 0, 7.005, 0, 0, 0, 7.005, -9.48992, 6.54014
 [node name="UI_Layers" type="Node" parent="."]
 
 [node name="Menu_UI" type="CanvasLayer" parent="UI_Layers"]
+script = ExtResource("4_v23wc")
 
 [node name="Main Menu" parent="UI_Layers/Menu_UI" instance=ExtResource("1_jth67")]
 
-[node name="Menu_UI_Options" type="CanvasLayer" parent="UI_Layers"]
-
-[node name="Options Menu" type="Control" parent="UI_Layers/Menu_UI_Options"]
+[node name="PauseMenu" parent="UI_Layers/Menu_UI" instance=ExtResource("5_e3dhx")]
 visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Pause_UI" type="CanvasLayer" parent="UI_Layers"]
-
-[node name="PauseMenu" parent="UI_Layers/Pause_UI" instance=ExtResource("5_e3dhx")]
 metadata/_edit_use_anchors_ = true

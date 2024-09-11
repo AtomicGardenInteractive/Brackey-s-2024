@@ -1,8 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://7bmuha166gyx"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/main_menu.gd" id="1_gtygw"]
-
-[sub_resource type="Theme" id="Theme_veap3"]
+[ext_resource type="Theme" uid="uid://dckgkctkr05ar" path="res://Assets/Themes/main_menu.tres" id="1_qffkt"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -11,8 +10,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_veap3")
+theme = ExtResource("1_qffkt")
 script = ExtResource("1_gtygw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0666667, 0.0862745, 0.121569, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -21,24 +29,47 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+alignment = 1
+
+[node name="Game Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
+text = "Game Title"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonsVBox" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="Start Game" type="Button" parent="MarginContainer/VBoxContainer/ButtonsVBox"]
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-
-[node name="Start Game" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
+focus_neighbor_top = NodePath("../Quit Game")
+focus_neighbor_bottom = NodePath("../Quit Game")
+focus_next = NodePath("../Quit Game")
+focus_previous = NodePath("../Quit Game")
 text = "Start Game"
 
-[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Quit Game" type="Button" parent="MarginContainer/VBoxContainer/ButtonsVBox"]
 layout_mode = 2
-text = "Options"
-
-[node name="Quit Game" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../Start Game")
+focus_neighbor_bottom = NodePath("../Start Game")
+focus_next = NodePath("../Start Game")
+focus_previous = NodePath("../Start Game")
 text = "Quit Game"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Start Game" to="." method="_on_start_game_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit Game" to="." method="_on_quit_game_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonsVBox/Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonsVBox/Quit Game" to="." method="_on_quit_game_pressed"]
