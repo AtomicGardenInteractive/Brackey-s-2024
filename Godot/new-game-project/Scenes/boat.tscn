@@ -6,12 +6,16 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_hmnsi"]
 
-[node name="Boat" type="CharacterBody3D"]
+[node name="Boat" type="CharacterBody3D" groups=["Boats"]]
 script = ExtResource("1_0n3pl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_vrv0l")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("BoxMesh_hmnsi")
 skeleton = NodePath("../..")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
