@@ -1,7 +1,7 @@
 extends Node
 
+@export var pause_menu: Control
 
-@nonready var pause_menu = $PauseMenu
 var paused = false
 
 func _process(delta):
@@ -10,10 +10,10 @@ func _process(delta):
 
 func pauseMenu():
 	if paused: 
-		pause_menu.hide()
-		get_tree.paused = true
+		pause_menu.hide() 
+		get_tree().paused = true
 	else: 
 		pause_menu.show()
-		get_tree.paused = false
+		get_tree().paused = false
 	
 	paused = !paused
