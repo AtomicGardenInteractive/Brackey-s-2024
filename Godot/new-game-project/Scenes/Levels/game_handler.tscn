@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dd3ciccoerrst"]
+[gd_scene load_steps=15 format=3 uid="uid://dd3ciccoerrst"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/Player.gd" id="1_3v35u"]
 [ext_resource type="PackedScene" uid="uid://7bmuha166gyx" path="res://main_menu.tscn" id="1_jth67"]
@@ -7,6 +7,8 @@
 [ext_resource type="ArrayMesh" uid="uid://vsnb002tkjcr" path="res://Assets/Models/pier.obj" id="3_fahsx"]
 [ext_resource type="Script" path="res://Scenes/Levels/menu_ui.gd" id="4_v23wc"]
 [ext_resource type="PackedScene" uid="uid://b82pkvikw18no" path="res://pause_menu.tscn" id="5_e3dhx"]
+[ext_resource type="PackedScene" uid="uid://o0mwunjgvhfl" path="res://Assets/Models/Rocks/Rock1.fbx" id="8_klhjm"]
+[ext_resource type="PackedScene" uid="uid://12qpidgmb85v" path="res://Assets/Models/Rocks/Rock2.fbx" id="9_ywn3s"]
 
 [sub_resource type="Environment" id="Environment_5imuj"]
 
@@ -146,3 +148,9 @@ unique_name_in_owner = true
 
 [node name="Boat" parent="." instance=ExtResource("2_74m0k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.5506, 9.53674e-06, -26.9683)
+
+[node name="Rock1" parent="." instance=ExtResource("8_klhjm")]
+transform = Transform3D(1.62261, 0, 0, 0, 2.88401, 0, 0, 0, 1, -19.6509, -2.49324, -19.0504)
+
+[node name="Rock2" parent="." instance=ExtResource("9_ywn3s")]
+transform = Transform3D(0.684074, 0, 0.672886, 0, 2.35719, 0, -0.373605, 0, 1.23206, 3.04572, -2.38419e-06, -21.4723)
