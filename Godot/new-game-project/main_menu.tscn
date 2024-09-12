@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/Levels/main_menu.gd" id="1_gtygw"]
 [ext_resource type="Theme" uid="uid://dckgkctkr05ar" path="res://Assets/Themes/main_menu.tres" id="1_qffkt"]
 
-[node name="Main Menu" type="Control"]
+[node name="Main Menu" type="Control" node_paths=PackedStringArray("buttons_v_box")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,6 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_qffkt")
 script = ExtResource("1_gtygw")
+buttons_v_box = NodePath("MarginContainer/VBoxContainer/ButtonsVBox")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1

@@ -16,6 +16,8 @@ func current_target_location(target_location):
 	nav_agent.target_position = target_location
 	pass
 
+func _ready() -> void:
+	connect(contextualCommand )
 
 func add_to_array(target_location):
 	if search_array(target_location) == true:
@@ -35,8 +37,17 @@ func search_array(target_location):
 func _physics_process(delta: float) -> void:
 	var current_location = global_transform.origin
 	var next_location = nav_agent.get_next_path_position()
-	var new_velocity = (next_location - current_location).normalize * SPEED
+	var new_velocity = (next_location - current_location).normalized() * SPEED
 	
-	velocity = new_velocity
-	move_and_slide()
+	nav_agent.set_velocity(new_velocity)
+	
 	pass
+
+
+func _on_navigation_agent_3d_target_reached() -> void:
+	pass # Replace with function body.
+
+
+func _on_navigation_agent_3d_velocity_computed(safe_velocity: Vector3) -> void:
+	velocity = velocity.move_toward(safe_velocity, 0.25)
+	move_and_slide()

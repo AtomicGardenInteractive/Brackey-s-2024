@@ -1,7 +1,7 @@
 extends Control
 
 signal start_game()
-@export var buttons_v_box: VBoxContainer = %ButtonsVBox
+@export var buttons_v_box: VBoxContainer
 
 func _ready() -> void: 
 	focus_buttons()

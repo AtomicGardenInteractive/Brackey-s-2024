@@ -2,6 +2,8 @@ extends Camera3D
 
 @export var unitArray : Array = []
 
+signal contextualCommand
+
 func _input(event):
 #Gets object object under cursor then checks if boat is already in selected units, if it not clear array then adds it to selected units
 	if event.is_action_pressed("Action_Select"):
@@ -28,7 +30,10 @@ func _input(event):
 			pass
 
 	if event.is_action_pressed("Action_Command"):
-		#
+		var hitObject = shoot_ray()
+		if hitObject:
+			emit_signal("contextualCommand") hitObject.get_global_postion()
+			pass
 		pass
 
 #Gets objects under cursor

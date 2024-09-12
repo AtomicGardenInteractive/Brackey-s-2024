@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dd3ciccoerrst"]
+[gd_scene load_steps=12 format=3 uid="uid://dd3ciccoerrst"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/Player.gd" id="1_3v35u"]
 [ext_resource type="PackedScene" uid="uid://7bmuha166gyx" path="res://main_menu.tscn" id="1_jth67"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://dkkxkrxcr74mb" path="res://Scenes/boat.tscn" id="2_74m0k"]
 [ext_resource type="Script" path="res://Scenes/Levels/menu_ui.gd" id="4_v23wc"]
 [ext_resource type="PackedScene" uid="uid://b82pkvikw18no" path="res://pause_menu.tscn" id="5_e3dhx"]
-[ext_resource type="ArrayMesh" uid="uid://cqhai0n3urvsw" path="res://Assets/Models/BoatTest1.obj" id="7_3xrs1"]
 
 [sub_resource type="Environment" id="Environment_5imuj"]
 
@@ -74,6 +73,7 @@ transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 38.2256, 1
 current = true
 size = 200.0
 script = ExtResource("1_3v35u")
+unitArray = null
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Level_Handler/World/Level"]
 navigation_mesh = SubResource("NavigationMesh_petug")
@@ -120,15 +120,13 @@ size = Vector3(10, 10, 10)
 
 [node name="Units" type="Node" parent="Level_Handler/World"]
 
-[node name="Boat" parent="Level_Handler/World/Units" instance=ExtResource("2_74m0k")]
-transform = Transform3D(7.005, 0, 0, 0, 7.005, 0, 0, 0, 7.005, -9.48992, 6.54014, 2.83892)
-
 [node name="UI_Layers" type="Node" parent="."]
 
 [node name="Menu_UI" type="CanvasLayer" parent="UI_Layers"]
 script = ExtResource("4_v23wc")
 
 [node name="Main Menu" parent="UI_Layers/Menu_UI" instance=ExtResource("1_jth67")]
+visible = false
 
 [node name="PauseMenu" parent="UI_Layers/Menu_UI" instance=ExtResource("5_e3dhx")]
 visible = false
@@ -137,6 +135,5 @@ metadata/_edit_use_anchors_ = true
 [node name="Main Menu" parent="." instance=ExtResource("1_jth67")]
 unique_name_in_owner = true
 
-[node name="BoatTest1" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.2088, -2.38419e-06, -22.8196)
-mesh = ExtResource("7_3xrs1")
+[node name="Boat" parent="." instance=ExtResource("2_74m0k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.5506, 9.53674e-06, -26.9683)
