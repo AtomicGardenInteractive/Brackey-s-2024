@@ -32,7 +32,7 @@ func _input(event):
 	if event.is_action_pressed("Action_Command"):
 		var hitObject = shoot_ray()
 		if hitObject:
-			emit_signal("contextualCommand") hitObject.get_global_postion()
+			#emit_signal("contextualCommand") hitObject.get_global_postion()
 			pass
 		pass
 

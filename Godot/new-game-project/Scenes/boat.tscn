@@ -1,18 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://dkkxkrxcr74mb"]
 
-[ext_resource type="Script" path="res://Scenes/Levels/boat.gd" id="1_0n3pl"]
+[ext_resource type="Script" path="res://Scenes/boat.gd" id="1_0n3pl"]
 [ext_resource type="ArrayMesh" uid="uid://cqhai0n3urvsw" path="res://Assets/Models/BoatTest1.obj" id="2_6nnls"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_vrv0l"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u785v"]
+radius = 6.32946
+height = 22.0607
 
 [node name="Boat" type="CharacterBody3D" groups=["Boats"]]
 script = ExtResource("1_0n3pl")
-boatID = null
-SPEED = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-shape = SubResource("BoxShape3D_vrv0l")
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 5.51972, 0)
+shape = SubResource("CapsuleShape3D_u785v")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

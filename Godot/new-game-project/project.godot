@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Brackey's 2024 Calm Before the Storm"
-run/main_scene="res://main_menu.tscn"
+run/main_scene="res://Scenes/Levels/game_handler.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 

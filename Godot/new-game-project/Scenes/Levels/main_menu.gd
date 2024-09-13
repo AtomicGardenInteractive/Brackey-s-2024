@@ -6,14 +6,13 @@ signal start_game()
 func _ready() -> void: 
 	focus_buttons()
 
-func _on_start_game_button_pressed() -> void:
+func _on_start_game_pressed() -> void:
 	start_game.emit()
+	$"../../.."._on_start_game_called()
 	hide()
 
-
-func _on_quit_game_button_pressed():
+func _on_quit_game_pressed() -> void:
 	get_tree().quit()
-
 
 func _on_visability_changed() -> void:
 	if visible:

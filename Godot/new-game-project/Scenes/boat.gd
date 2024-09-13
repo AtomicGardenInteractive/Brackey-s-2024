@@ -17,7 +17,8 @@ func current_target_location(target_location):
 	pass
 
 func _ready() -> void:
-	connect(contextualCommand )
+	#connect(contextualCommand )
+	pass
 
 func add_to_array(target_location):
 	if search_array(target_location) == true:
@@ -34,7 +35,7 @@ func search_array(target_location):
 	else:
 		return false
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var current_location = global_transform.origin
 	var next_location = nav_agent.get_next_path_position()
 	var new_velocity = (next_location - current_location).normalized() * SPEED
