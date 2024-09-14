@@ -1,11 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkkxkrxcr74mb"]
+[gd_scene load_steps=7 format=3 uid="uid://dkkxkrxcr74mb"]
 
 [ext_resource type="Script" path="res://Scenes/boat.gd" id="1_0n3pl"]
-[ext_resource type="ArrayMesh" uid="uid://cqhai0n3urvsw" path="res://Assets/Models/BoatTest1.obj" id="2_6nnls"]
+[ext_resource type="PackedScene" uid="uid://iy3thkf6h37t" path="res://Assets/Models/Boat2.fbx" id="2_msc4v"]
+[ext_resource type="Texture2D" uid="uid://dgdl5lr7cfuar" path="res://Assets/Materials/boat.png" id="3_aruv4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u785v"]
 radius = 6.32946
 height = 22.0607
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n5ph6"]
+albedo_texture = ExtResource("3_aruv4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c2uyn"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0, 1, 1)
 
 [node name="Boat" type="CharacterBody3D" groups=["Boats"]]
 script = ExtResource("1_0n3pl")
@@ -14,10 +22,11 @@ script = ExtResource("1_0n3pl")
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 6.41135, 0)
 shape = SubResource("CapsuleShape3D_u785v")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-mesh = ExtResource("2_6nnls")
-skeleton = NodePath("../..")
+[node name="Boat2" parent="." instance=ExtResource("2_msc4v")]
+
+[node name="Cylinder" parent="Boat2" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_n5ph6")
+surface_material_override/1 = SubResource("StandardMaterial3D_c2uyn")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 avoidance_enabled = true
@@ -25,3 +34,5 @@ debug_enabled = true
 
 [connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
+
+[editable path="Boat2"]
