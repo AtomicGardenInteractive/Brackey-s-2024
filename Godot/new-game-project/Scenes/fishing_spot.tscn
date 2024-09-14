@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvv536lbj1pte"]
+
+[ext_resource type="PackedScene" uid="uid://cq4n8aynpe1bx" path="res://Assets/Models/ThreeFish.glb" id="1_ac21h"]
+
+[node name="FishingSpot" type="Node2D"]
+
+[node name="ThreeFish" parent="." instance=ExtResource("1_ac21h")]
