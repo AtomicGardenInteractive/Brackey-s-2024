@@ -40,10 +40,12 @@ func search_array(target_location):
 
 func next_navigation_target():
 	print(targetLocationArray)
-	current_target_location(targetLocationArray.pop_front())
+	if targetLocationArray.size() > 0:
+		current_target_location(targetLocationArray.pop_front())
 	print(nav_agent.target_position)
 
 func current_target_location(target_location):
+	await get_tree().create_timer(0.2).timeout
 	nav_agent.target_position = target_location
 
 
