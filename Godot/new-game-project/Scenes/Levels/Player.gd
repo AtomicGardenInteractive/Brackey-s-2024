@@ -1,4 +1,5 @@
 extends Camera3D
+class_name Player
 
 @export var unitArray : Array = []
 
@@ -32,7 +33,16 @@ func _input(event):
 	if event.is_action_pressed("Action_Command"):
 		var hitObject = shoot_ray()
 		if hitObject:
-			#emit_signal("contextualCommand") hitObject.get_global_postion()
+			emit_signal("contextualCommand", hitObject["position"], false)
+			print(hitObject["position"])
+			pass
+		pass
+
+	if event.is_action_pressed("Action_Queue_Command"):
+		var hitObject = shoot_ray()
+		if hitObject:
+			emit_signal("contextualCommand", hitObject["position"], true)
+			print(hitObject["position"])
 			pass
 		pass
 
@@ -47,7 +57,6 @@ func shoot_ray():
 	ray_query.from = from
 	ray_query.to = to
 	var raycast_results = space.intersect_ray(ray_query)
-	print(raycast_results)
 	return raycast_results
 
 
