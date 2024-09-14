@@ -1,0 +1,88 @@
+[gd_scene load_steps=10 format=3 uid="uid://b4s0xgjysi7h0"]
+
+[ext_resource type="Texture2D" uid="uid://bhx8ohpitnf0r" path="res://Assets/UI Assets/Dialogue and Character Box/Dialogue and Character Box.png" id="1_utydy"]
+[ext_resource type="Texture2D" uid="uid://13khu4odsy0b" path="res://Assets/UI Assets/Health Bar/Health Bar Background.png" id="3_qp55f"]
+[ext_resource type="Texture2D" uid="uid://berc7i0y3of6l" path="res://Assets/UI Assets/Health Bar/Progress Bar Border.png" id="4_scdjt"]
+[ext_resource type="Texture2D" uid="uid://1tt14hv5qq6r" path="res://Assets/UI Assets/Health Bar/Progress Health Bar.png" id="5_drg2l"]
+[ext_resource type="Texture2D" uid="uid://cnobe7e1cx0bf" path="res://Assets/UI Assets/Storm Timer/Storm Timer Background.png" id="6_lct6t"]
+[ext_resource type="Texture2D" uid="uid://cexgxdpoygxf7" path="res://Assets/UI Assets/Storm Timer/Progress Bar Border.png" id="7_lv70j"]
+[ext_resource type="Texture2D" uid="uid://cpc30bquv4wo2" path="res://Assets/UI Assets/Unit Icon Boxes/Single Large Unit Box.png" id="8_3s2vw"]
+[ext_resource type="Texture2D" uid="uid://blbcwkil6jgxj" path="res://Assets/UI Assets/Storm Timer/Storm Timer Progress Bar.png" id="8_u8fc2"]
+[ext_resource type="Texture2D" uid="uid://cbee4h7widex0" path="res://Assets/UI Assets/Unit Icon Boxes/Small Unit Icon Box.png" id="9_g0u2t"]
+
+[node name="Game UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Health Bar" type="TextureProgressBar" parent="."]
+texture_filter = 5
+layout_mode = 2
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 150.0
+offset_bottom = 34.0
+fill_mode = 1
+texture_under = ExtResource("3_qp55f")
+texture_over = ExtResource("4_scdjt")
+texture_progress = ExtResource("5_drg2l")
+
+[node name="Storm Timer" type="TextureProgressBar" parent="."]
+texture_filter = 5
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -137.0
+offset_bottom = 40.0
+grow_horizontal = 0
+fill_mode = 1
+texture_under = ExtResource("6_lct6t")
+texture_over = ExtResource("7_lv70j")
+texture_progress = ExtResource("8_u8fc2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.771
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -39.608
+offset_right = -583.0
+offset_bottom = -98.0
+grow_vertical = 0
+scale = Vector2(2, 2)
+
+[node name="Dialogue and Character Box" type="TextureRect" parent="HBoxContainer"]
+texture_filter = 5
+layout_mode = 2
+texture = ExtResource("1_utydy")
+
+[node name="LargeUnitIconBox" type="TextureRect" parent="HBoxContainer"]
+texture_filter = 5
+layout_mode = 2
+texture = ExtResource("8_3s2vw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="SmallUnitIconBox2" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
+texture_filter = 5
+layout_mode = 2
+texture = ExtResource("9_g0u2t")
+
+[node name="SmallUnitIconBox1" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
+texture_filter = 5
+layout_mode = 2
+texture = ExtResource("9_g0u2t")

@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dd3ciccoerrst"]
+[gd_scene load_steps=12 format=3 uid="uid://dd3ciccoerrst"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/Player.gd" id="1_3v35u"]
 [ext_resource type="PackedScene" uid="uid://7bmuha166gyx" path="res://main_menu.tscn" id="1_jth67"]
 [ext_resource type="Script" path="res://Scenes/Levels/game_handler.gd" id="1_vwlyo"]
 [ext_resource type="PackedScene" uid="uid://dkkxkrxcr74mb" path="res://Scenes/boat.tscn" id="2_74m0k"]
 [ext_resource type="ArrayMesh" uid="uid://vsnb002tkjcr" path="res://Assets/Models/pier.obj" id="3_fahsx"]
+[ext_resource type="PackedScene" uid="uid://b4s0xgjysi7h0" path="res://Game UI.tscn" id="6_rcefj"]
 
 [sub_resource type="Environment" id="Environment_5imuj"]
 
@@ -109,3 +110,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.5506, 9.53674e-06, -26.96
 [node name="Menu_UI" type="CanvasLayer" parent="UI_Layers"]
 
 [node name="Main Menu" parent="UI_Layers/Menu_UI" instance=ExtResource("1_jth67")]
+
+[node name="Game_UI" type="CanvasLayer" parent="UI_Layers"]
+
+[node name="Game UI" parent="UI_Layers/Game_UI" instance=ExtResource("6_rcefj")]
