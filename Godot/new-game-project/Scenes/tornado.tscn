@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://xj6t4kiml5cp"]
+
+[ext_resource type="PackedScene" uid="uid://byitv4b7nk15b" path="res://Assets/Models/Tornado.glb" id="1_3rckh"]
+
+[node name="Tornado" type="Node2D"]
+
+[node name="Tornado" parent="." instance=ExtResource("1_3rckh")]

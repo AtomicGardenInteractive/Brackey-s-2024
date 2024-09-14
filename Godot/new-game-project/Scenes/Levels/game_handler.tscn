@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://dd3ciccoerrst"]
+[gd_scene load_steps=13 format=3 uid="uid://dd3ciccoerrst"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/Player.gd" id="1_3v35u"]
 [ext_resource type="PackedScene" uid="uid://7bmuha166gyx" path="res://main_menu.tscn" id="1_jth67"]
 [ext_resource type="Script" path="res://Scenes/Levels/game_handler.gd" id="1_vwlyo"]
 [ext_resource type="PackedScene" uid="uid://dkkxkrxcr74mb" path="res://Scenes/boat.tscn" id="2_74m0k"]
 [ext_resource type="ArrayMesh" uid="uid://vsnb002tkjcr" path="res://Assets/Models/pier.obj" id="3_fahsx"]
+[ext_resource type="Material" uid="uid://bjt2aunmqx0oe" path="res://Assets/Materials/water_materiall.tres" id="3_g31kj"]
+[ext_resource type="PackedScene" uid="uid://yfy5c07kfc7o" path="res://Scenes/stormfront.tscn" id="6_hli1b"]
 
 [sub_resource type="Environment" id="Environment_5imuj"]
 
@@ -59,8 +61,10 @@ navigation_mesh = SubResource("NavigationMesh_petug")
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 
 [node name="Water" type="MeshInstance3D" parent="Level_Handler/World/Level/NavigationRegion3D/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0104614, -0.198413, 0.164087)
 mesh = SubResource("PlaneMesh_iags2")
 skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("3_g31kj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level_Handler/World/Level/NavigationRegion3D/Floor"]
 shape = SubResource("ConcavePolygonShape3D_jghok")
@@ -109,3 +113,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.5506, 9.53674e-06, -26.96
 [node name="Menu_UI" type="CanvasLayer" parent="UI_Layers"]
 
 [node name="Main Menu" parent="UI_Layers/Menu_UI" instance=ExtResource("1_jth67")]
+
+[node name="Stormfront" parent="." instance=ExtResource("6_hli1b")]
+transform = Transform3D(17.9497, 0, 0, 0, 0.350414, 0, 0, 0, 25.7472, 288.449, 27.6677, -56.396)

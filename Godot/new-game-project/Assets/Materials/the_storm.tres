@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bw8v1a810mdbe"]
+
+[ext_resource type="Shader" path="res://Assets/Materials/the_storm.gdshader" id="1_tjwhf"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_tjwhf")
+shader_parameter/height_scale = -18.71
+shader_parameter/wave_speed = 0.17
+shader_parameter/upper_transparency = 0.89
+shader_parameter/global_transparency = 0.9
+shader_parameter/time_factor = Vector2(2, 3)
+shader_parameter/uv1_scale = null
+shader_parameter/uv1_offset = null
+shader_parameter/color1 = Color(0.769405, 0.543532, 0.832305, 1)
+shader_parameter/color2 = Color(0.71, 0.89, 0.95, 1)
