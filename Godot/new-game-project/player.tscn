@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dglyq1tx6is8e"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/Player.gd" id="1_hk45v"]
+
+[node name="Player" type="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 38.2256, 140.04, 78.491)
+current = true
+size = 200.0
+script = ExtResource("1_hk45v")
