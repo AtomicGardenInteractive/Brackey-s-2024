@@ -5,7 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://dkkxkrxcr74mb" path="res://Scenes/boat.tscn" id="2_74m0k"]
 [ext_resource type="PackedScene" uid="uid://dglyq1tx6is8e" path="res://player.tscn" id="2_np8cn"]
 [ext_resource type="ArrayMesh" uid="uid://vsnb002tkjcr" path="res://Assets/Models/pier.obj" id="3_fahsx"]
-[ext_resource type="PackedScene" uid="uid://b4s0xgjysi7h0" path="res://Game UI.tscn" id="6_rcefj"]
+[ext_resource type="Material" uid="uid://bjt2aunmqx0oe" path="res://Assets/Materials/water_materiall.tres" id="3_qodso"]
+[ext_resource type="PackedScene" uid="uid://cwtbxb55herlv" path="res://Game UI.tscn" id="6_rcefj"]
 
 [sub_resource type="Environment" id="Environment_5imuj"]
 
@@ -15,11 +16,8 @@ polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(2, 0, 3), PackedInt32Arr
 agent_max_climb = 0.0
 agent_max_slope = 1.35
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b2mlf"]
-albedo_color = Color(0.254902, 0.52549, 0.690196, 1)
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_iags2"]
-material = SubResource("StandardMaterial3D_b2mlf")
+material = ExtResource("3_qodso")
 size = Vector2(128, 128)
 subdivide_width = 32
 subdivide_depth = 32
@@ -101,13 +99,14 @@ mesh = ExtResource("3_fahsx")
 
 [node name="Boat" parent="Level_Handler/World/Units" instance=ExtResource("2_74m0k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.5506, 9.53674e-06, -26.9683)
+SPEED = 300.0
 
 [node name="UI_Layers" type="Node" parent="."]
-
-[node name="Menu_UI" type="CanvasLayer" parent="UI_Layers"]
-
-[node name="Main Menu" parent="UI_Layers/Menu_UI" instance=ExtResource("1_jth67")]
 
 [node name="Game_UI" type="CanvasLayer" parent="UI_Layers"]
 
 [node name="Game UI" parent="UI_Layers/Game_UI" instance=ExtResource("6_rcefj")]
+
+[node name="Menu_UI" type="CanvasLayer" parent="UI_Layers"]
+
+[node name="Main Menu" parent="UI_Layers/Menu_UI" instance=ExtResource("1_jth67")]

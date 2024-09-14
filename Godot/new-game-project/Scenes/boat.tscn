@@ -20,6 +20,7 @@ mesh = ExtResource("2_6nnls")
 skeleton = NodePath("../..")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+target_desired_distance = 50.0
 avoidance_enabled = true
 debug_enabled = true
 

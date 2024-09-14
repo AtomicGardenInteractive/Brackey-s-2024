@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b4s0xgjysi7h0"]
+[gd_scene load_steps=10 format=3 uid="uid://cwtbxb55herlv"]
 
 [ext_resource type="Texture2D" uid="uid://bhx8ohpitnf0r" path="res://Assets/UI Assets/Dialogue and Character Box/Dialogue and Character Box.png" id="1_utydy"]
 [ext_resource type="Texture2D" uid="uid://13khu4odsy0b" path="res://Assets/UI Assets/Health Bar/Health Bar Background.png" id="3_qp55f"]
@@ -54,13 +54,16 @@ texture_progress = ExtResource("8_u8fc2")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.771
-anchor_right = 1.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_top = -39.608
-offset_right = -583.0
-offset_bottom = -98.0
+offset_left = -561.0
+offset_top = -198.0
+offset_right = 1.0
+offset_bottom = -108.0
+grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(2, 2)
 
@@ -68,11 +71,13 @@ scale = Vector2(2, 2)
 texture_filter = 5
 layout_mode = 2
 texture = ExtResource("1_utydy")
+stretch_mode = 3
 
 [node name="LargeUnitIconBox" type="TextureRect" parent="HBoxContainer"]
 texture_filter = 5
 layout_mode = 2
 texture = ExtResource("8_3s2vw")
+stretch_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
@@ -81,8 +86,10 @@ layout_mode = 2
 texture_filter = 5
 layout_mode = 2
 texture = ExtResource("9_g0u2t")
+stretch_mode = 3
 
 [node name="SmallUnitIconBox1" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
 texture_filter = 5
 layout_mode = 2
 texture = ExtResource("9_g0u2t")
+stretch_mode = 3

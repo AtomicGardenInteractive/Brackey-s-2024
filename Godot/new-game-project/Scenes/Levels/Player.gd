@@ -33,18 +33,11 @@ func _input(event):
 	if event.is_action_pressed("Action_Command"):
 		var hitObject = shoot_ray()
 		if hitObject:
-			emit_signal("contextualCommand", hitObject["position"], false)
-			print(hitObject["position"])
-			pass
-		pass
+			if event.is_action_pressed("Action_Queue_Command"):
+				emit_signal("contextualCommand", hitObject["position"], true)
+			else:
+				emit_signal("contextualCommand", hitObject["position"], false)
 
-	if event.is_action_pressed("Action_Queue_Command"):
-		var hitObject = shoot_ray()
-		if hitObject:
-			emit_signal("contextualCommand", hitObject["position"], true)
-			print(hitObject["position"])
-			pass
-		pass
 
 #Gets objects under cursor
 func shoot_ray():
