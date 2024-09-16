@@ -17,7 +17,13 @@ func _ready() -> void:
 func _on_contextual_command_called(target_position : Vector3, shiftHeld : bool) -> void:
 	print(target_position)
 	if shiftHeld:
-		add_to_array(target_position)
+		#TO FIX THIS PLZ PLZ PLZ
+		if targetLocationArray.size() == 0:
+			add_to_array(target_position)
+			next_navigation_target()
+		else:
+			add_to_array(target_position)
+		
 	else:
 		targetLocationArray.clear()
 		add_to_array(target_position)
@@ -41,7 +47,7 @@ func search_array(target_location):
 func next_navigation_target():
 	print(targetLocationArray)
 	if targetLocationArray.size() > 0:
-		current_target_location(targetLocationArray.pop_front())
+		current_target_location(targetLocationArray.front())
 	print(nav_agent.target_position)
 
 func current_target_location(target_location):
@@ -59,7 +65,7 @@ func _physics_process(_delta: float) -> void:
 
 func _on_navigation_agent_3d_target_reached() -> void:
 	print("Reached Distination")
-	
+	targetLocationArray.erase(targetLocationArray.front())
 	next_navigation_target()
 
 

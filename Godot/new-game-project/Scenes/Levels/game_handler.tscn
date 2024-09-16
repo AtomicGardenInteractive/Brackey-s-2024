@@ -1,12 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://dd3ciccoerrst"]
+[gd_scene load_steps=16 format=3 uid="uid://dd3ciccoerrst"]
 
-[ext_resource type="PackedScene" uid="uid://7bmuha166gyx" path="res://main_menu.tscn" id="1_jth67"]
+[ext_resource type="PackedScene" uid="uid://7bmuha166gyx" path="res://Scenes/main_menu.tscn" id="1_jth67"]
 [ext_resource type="Script" path="res://Scenes/Levels/game_handler.gd" id="1_vwlyo"]
 [ext_resource type="PackedScene" uid="uid://dkkxkrxcr74mb" path="res://Scenes/boat.tscn" id="2_74m0k"]
-[ext_resource type="PackedScene" uid="uid://dglyq1tx6is8e" path="res://player.tscn" id="2_np8cn"]
+[ext_resource type="PackedScene" uid="uid://dglyq1tx6is8e" path="res://Scenes/player.tscn" id="2_np8cn"]
 [ext_resource type="ArrayMesh" uid="uid://vsnb002tkjcr" path="res://Assets/Models/pier.obj" id="3_fahsx"]
 [ext_resource type="Material" uid="uid://bjt2aunmqx0oe" path="res://Assets/Materials/water_materiall.tres" id="3_qodso"]
-[ext_resource type="PackedScene" uid="uid://cwtbxb55herlv" path="res://Game UI.tscn" id="6_rcefj"]
+[ext_resource type="ArrayMesh" uid="uid://vkaua51lrk1o" path="res://Assets/Models/Storm_front.obj" id="6_n6x23"]
+[ext_resource type="PackedScene" uid="uid://cwtbxb55herlv" path="res://Scenes/Game UI.tscn" id="6_rcefj"]
+[ext_resource type="Material" uid="uid://bw8v1a810mdbe" path="res://Assets/Materials/the_storm.tres" id="7_4setj"]
+[ext_resource type="PackedScene" uid="uid://bdcgiubk365k4" path="res://Assets/Models/ThreeFish.tscn" id="8_7xvq7"]
+[ext_resource type="ArrayMesh" uid="uid://c0qegj5m22i8o" path="res://Assets/Models/Clouds.obj" id="8_8mrmk"]
 
 [sub_resource type="Environment" id="Environment_5imuj"]
 
@@ -101,6 +105,43 @@ mesh = ExtResource("3_fahsx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.5506, 9.53674e-06, -26.9683)
 SPEED = 300.0
 
+[node name="StormFront" type="MeshInstance3D" parent="Level_Handler/World/Units"]
+transform = Transform3D(69.8607, 0, 0, 0, 1, 0, 0, 0, 42.4447, 642.942, 45.1046, 4.84026)
+mesh = ExtResource("6_n6x23")
+surface_material_override/0 = ExtResource("7_4setj")
+
+[node name="Clouds" type="MeshInstance3D" parent="Level_Handler"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.293, 13.455, 274.182)
+mesh = ExtResource("8_8mrmk")
+
+[node name="Clouds2" type="MeshInstance3D" parent="Level_Handler"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.293, 13.455, 197.996)
+mesh = ExtResource("8_8mrmk")
+
+[node name="Clouds3" type="MeshInstance3D" parent="Level_Handler"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.293, 13.455, 122.266)
+mesh = ExtResource("8_8mrmk")
+
+[node name="Clouds4" type="MeshInstance3D" parent="Level_Handler"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.293, 13.455, 46.0791)
+mesh = ExtResource("8_8mrmk")
+
+[node name="Clouds5" type="MeshInstance3D" parent="Level_Handler"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.293, 13.455, -12.0319)
+mesh = ExtResource("8_8mrmk")
+
+[node name="Clouds6" type="MeshInstance3D" parent="Level_Handler"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.293, 13.455, -88.2184)
+mesh = ExtResource("8_8mrmk")
+
+[node name="Clouds7" type="MeshInstance3D" parent="Level_Handler"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.293, 13.455, -163.948)
+mesh = ExtResource("8_8mrmk")
+
+[node name="Clouds8" type="MeshInstance3D" parent="Level_Handler"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.293, 13.455, -240.135)
+mesh = ExtResource("8_8mrmk")
+
 [node name="UI_Layers" type="Node" parent="."]
 
 [node name="Game_UI" type="CanvasLayer" parent="UI_Layers"]
@@ -110,3 +151,6 @@ SPEED = 300.0
 [node name="Menu_UI" type="CanvasLayer" parent="UI_Layers"]
 
 [node name="Main Menu" parent="UI_Layers/Menu_UI" instance=ExtResource("1_jth67")]
+
+[node name="ThreeFish" parent="." instance=ExtResource("8_7xvq7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.4281, 2.38419e-06, 21.8846)

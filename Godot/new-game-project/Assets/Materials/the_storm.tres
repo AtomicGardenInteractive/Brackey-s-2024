@@ -3,7 +3,7 @@
 [ext_resource type="Shader" path="res://Assets/Materials/the_storm.gdshader" id="1_tjwhf"]
 
 [resource]
-render_priority = 0
+render_priority = 1
 shader = ExtResource("1_tjwhf")
 shader_parameter/height_scale = -18.71
 shader_parameter/wave_speed = 0.17

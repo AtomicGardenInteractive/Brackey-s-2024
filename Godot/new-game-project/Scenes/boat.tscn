@@ -29,6 +29,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_n5ph6")
 surface_material_override/1 = SubResource("StandardMaterial3D_c2uyn")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+target_desired_distance = 5.0
 avoidance_enabled = true
 debug_enabled = true
 
